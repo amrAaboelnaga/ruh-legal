@@ -10,218 +10,306 @@
   <main class="wrap">
     <a class="back" href="index.html">&larr; Rūh Legal</a>
     <article>
-      <h1>Privacy Policy</h1>
-      <p class="meta">Last updated: 21 April 2026</p>
-
-      <p>
-        This policy explains what information the Rūh iOS application
-        (&ldquo;<strong>Rūh</strong>&rdquo;, &ldquo;<strong>the app</strong>&rdquo;)
-        collects, how it is used, and the controls you have. Rūh is operated by
-        <strong>Amr Aboelnaga</strong>, based in the Commonwealth of Virginia,
-        United States. You can reach us at
-        <a href="mailto:amr@verific.ai">amr@verific.ai</a>.
-      </p>
-
-      <h2>1. Who this policy applies to</h2>
-      <p>
-        Rūh is offered to users in the United States and other non-EU,
-        non-UK, non-Swiss jurisdictions. It is not offered to users in the
-        European Economic Area, the United Kingdom, or Switzerland. If you
-        access Rūh from one of those regions, please do not use the app.
-      </p>
-
-      <h2>2. Information we collect</h2>
-
-      <h3>2.1 Information stored on your device</h3>
-      <p>
-        Most of what Rūh stores lives only on your iPhone and never leaves it
-        unless you explicitly enable Cloud Sync (§3) or Pronunciation Review
-        (§4). This includes:
-      </p>
-      <ul>
-        <li>Your reciter choice, theme, daily goal, and other preferences.</li>
-        <li>Your bookmarks and ayah notes.</li>
-        <li>Your memorisation (hifz) entries and practice history.</li>
-        <li>Your khatam plans and daily reading log.</li>
-        <li>Cached Qur&rsquo;an audio files and mushaf rendering caches.</li>
-      </ul>
-      <p>
-        This on-device data can be deleted at any time by signing out of your
-        account (if you created one) or by deleting the app.
-      </p>
-
-      <h3>2.2 Microphone audio (on-device recitation tracking)</h3>
-      <p>
-        When you start recitation tracking, Rūh accesses your microphone so it
-        can follow along with your reading in real time. Audio processed by the
-        on-device recitation tracker is <strong>never uploaded</strong>. It
-        exists only in memory while you are reciting and is discarded
-        immediately.
-      </p>
-
-      <h3>2.3 Account information (optional)</h3>
-      <p>
-        If you sign in with Apple, Apple shares with us a unique user identifier
-        and, the first time you sign in, your name and a (real or relay) email
-        address. We store these in our Supabase database to create your profile.
-        No password is stored or handled by us.
-      </p>
-
-      <h3>2.4 Cloud-synced content (opt-in)</h3>
-      <p>
-        When you are signed in and Cloud Sync is enabled, the following data
-        is uploaded to our Supabase backend so it can travel with you across
-        devices: profile fields (display name, age range, reading goal),
-        bookmarks, hifz entries with practice results, khatam plans, settings,
-        and ayah notes. We do <strong>not</strong> sync your microphone audio,
-        your reading-tracker history, or any device identifiers under this
-        flow.
-      </p>
-
-      <h3>2.5 Pronunciation Review audio (opt-in)</h3>
-      <p>
-        If you explicitly opt in to Pronunciation Review and request feedback
-        on a specific ayah, the recorded audio for that ayah is sent to our
-        GPU service (operated on Modal.com) for analysis. After the analysis
-        result is returned, the audio is discarded. It is not stored,
-        aggregated, or used to train any model. If this toggle is off in
-        Settings, no audio is ever transmitted.
-      </p>
-
-      <h3>2.6 Local notifications</h3>
-      <p>
-        Rūh schedules notification reminders entirely on-device using Apple&rsquo;s
-        local notifications API. No push tokens are collected and no
-        notifications are sent from a server.
-      </p>
-
-      <h3>2.7 Information we do not collect</h3>
-      <ul>
-        <li>We do not track you across other apps or websites.</li>
-        <li>We do not serve advertising and have no ad SDKs embedded.</li>
-        <li>We do not collect location data.</li>
-        <li>We do not access your contacts, photos, or calendar.</li>
-      </ul>
-
-      <h2>3. How information is used</h2>
-      <p>Information collected is used solely to:</p>
-      <ul>
-        <li>Provide and improve the core reading and memorisation features.</li>
-        <li>Sync your data across devices when you are signed in.</li>
-        <li>Return pronunciation feedback when you request it.</li>
-        <li>Respond to your support emails.</li>
-      </ul>
-      <p>
-        We do not sell, rent, or trade your personal information. We do not
-        use your data for advertising.
-      </p>
-
-      <h2>4. Who processes your data on our behalf</h2>
-      <ul>
-        <li>
-          <strong>Supabase</strong> — managed Postgres database and
-          authentication provider, hosted in the United States. Your profile
-          and cloud-synced content live here when Cloud Sync is enabled.
-        </li>
-        <li>
-          <strong>Modal Labs</strong> — ephemeral GPU compute provider, used
-          only when you submit an ayah for Pronunciation Review. Audio is
-          processed in memory and discarded.
-        </li>
-        <li>
-          <strong>Apple</strong> — Sign in with Apple, local notifications,
-          iCloud Keychain (for secure session tokens if you use it).
-        </li>
-        <li>
-          <strong>Expo Application Services</strong> — used for over-the-air
-          updates and crash diagnostics (only when Crash Diagnostics is on).
-        </li>
-      </ul>
-
-      <h2>5. Your controls</h2>
-      <ul>
-        <li>
-          <strong>Opt-in toggles</strong> for Pronunciation Review, Cloud Sync,
-          and Crash Diagnostics live in Settings &rarr; About and Settings
-          &rarr; Pronunciation review.
-        </li>
-        <li>
-          <strong>Export</strong>: if you are signed in you can request a
-          complete copy of your cloud-synced data from Settings &rarr; Account
-          &rarr; Export my data. The app produces a JSON file you can save or
-          share anywhere.
-        </li>
-        <li>
-          <strong>Delete account</strong>: Settings &rarr; Account &rarr; Delete
-          my account removes your profile and every server-side row tied to
-          your user ID. On-device data is also wiped on the device you triggered
-          the deletion from. This action is permanent.
-        </li>
-        <li>
-          <strong>Sign out</strong>: clears your local account state and wipes
-          app data on this device. A different user can then sign in to a
-          clean slate.
-        </li>
-      </ul>
-
-      <h2>6. Data retention</h2>
-      <p>
-        Cloud-synced data is retained for as long as you have an account. When
-        you delete your account, your server rows are deleted promptly. An
-        anonymised hash of your deletion event is kept in an audit log so we
-        can honour the deletion if the same Apple ID is used to create a new
-        account in the future.
-      </p>
-      <p>
-        Pronunciation Review audio is never retained. Log entries for the GPU
-        service retain only the non-content fields needed to diagnose
-        problems (request timestamp, duration, success/failure, anonymised
-        user hash) and are rotated out within 30 days.
-      </p>
-
-      <h2>7. Children</h2>
-      <p>
-        Rūh is intended for users aged 13 and over. We do not knowingly
-        collect personal information from anyone under 13. If you believe a
-        child under 13 has provided us with personal information, please
-        contact us and we will remove it.
-      </p>
-
-      <h2>8. Security</h2>
-      <p>
-        On-device data uses the iOS sandbox. Session tokens are stored in the
-        iOS Keychain. Data in transit to our backends is encrypted with TLS.
-        Supabase row-level security policies ensure a signed-in user can only
-        read and write their own rows. No system is perfectly secure; if you
-        believe your account has been compromised, contact us immediately.
-      </p>
-
-      <h2>9. California residents (CCPA/CPRA)</h2>
-      <p>
-        Californians may request to know what personal information we hold
-        about them, request deletion, and request correction. You can exercise
-        these rights through Settings &rarr; Account &rarr; Export my data
-        and Settings &rarr; Account &rarr; Delete my account, or by emailing
-        <a href="mailto:amr@verific.ai">amr@verific.ai</a>. We do not sell
-        personal information and we do not &ldquo;share&rdquo; it for
-        cross-context behavioural advertising.
-      </p>
-
-      <h2>10. Changes to this policy</h2>
-      <p>
-        If this policy changes in any material way, the &ldquo;Last updated&rdquo;
-        date above will change and the app will surface a short disclosure the
-        next time you open Settings &rarr; About. Continued use of Rūh after
-        such a change means you accept the revised policy.
-      </p>
-
-      <h2>11. Contact</h2>
-      <p>
-        Questions about this policy, or requests to exercise your rights,
-        should go to <a href="mailto:amr@verific.ai">amr@verific.ai</a>.
-      </p>
+<h1>Privacy Policy</h1>
+<p><strong>Last updated:</strong> 21 April 2026
+<strong>Effective date:</strong> [TBD]</p>
+<p>This is the privacy policy for <strong>Rūh</strong> (&ldquo;the app&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;), an iOS application for reading, memorizing, and reciting the Qur&rsquo;an. The app is currently published by <strong>Amr Aboelnaga</strong> (&ldquo;the developer&rdquo;), an individual sole proprietor based in the <strong>Commonwealth of Virginia, United States of America</strong>. A limited liability company is planned to take over publishing the app; when it is formed, this policy will be updated with the LLC&rsquo;s legal name and jurisdiction, with advance notice to account users per §10.</p>
+<p>We&rsquo;ve written this in plain language. If anything is unclear, contact us at <strong>amr@verific.ai</strong>. A formal &ldquo;legal&rdquo; version of these terms governs in case of dispute, and is identical in substance.</p>
+<hr />
+<h2>TL;DR</h2>
+<ul>
+<li>The app works <strong>without an account</strong> for reading and memorization. Anyone of any age can open the app and start reading.</li>
+<li>An <strong>account is optional</strong>, and is required only for: cloud sync across devices, the pronunciation review feature (&ldquo;Muaalem&rdquo;), and any future social or community features.</li>
+<li>Accounts can be created with <strong>Sign in with Apple</strong>, <strong>Sign in with Google</strong>, or an <strong>email and password</strong>. You must be <strong>13 or older</strong> to create an account.</li>
+<li>Your microphone is used to track your recitation <strong>on your device only</strong>. Nothing is uploaded for that feature.</li>
+<li>One specific feature, <strong>pronunciation review (Muaalem)</strong>, sends a single verse&rsquo;s audio to our server for analysis when you ask for it. You opt in the first time, and you can turn it off any time. <strong>The recording is processed in memory, analyzed, and discarded within the same request. It is never written to disk, never logged, and never backed up.</strong> Only the analysis output (which letters, if any, the model thinks may have been mispronounced) is kept on your account so you can review your past sessions.</li>
+<li>We do not sell your data. We do not share it with advertisers. We do not use your recitation, your reading habits, or anything else to train any AI model — ours or anyone else&rsquo;s.</li>
+<li><strong>v1 availability is deliberately limited.</strong> We currently ship the app to the United States and selected non-EU markets. The European Union, European Economic Area (Iceland, Liechtenstein, Norway), United Kingdom, and Switzerland are <strong>not available in v1</strong> — these markets will be added in a future release once EU/UK data-protection representatives are in place. If you are reading this privacy policy from an excluded market, you are not currently our user; the GDPR / UK GDPR sections below describe how we will handle your data when availability is restored.</li>
+<li>You have full rights under CCPA (California), BIPA (Illinois), and other US state privacy laws. We honor GDPR-level rights globally as a matter of practice, even where local law doesn&rsquo;t require it.</li>
+</ul>
+<hr />
+<h2>1. Who this policy applies to</h2>
+<p>This policy applies to anyone who uses the app, with two distinct cases:</p>
+<ul>
+<li><strong>Guest users</strong> — anyone who opens the app without creating an account. Guest users can read the Qur&rsquo;an, use memorization features, and use real-time on-device recitation tracking. Guest data is stored only on the device.</li>
+<li><strong>Account users</strong> — anyone aged 13 or older who creates an account to enable cloud sync, the Muaalem pronunciation review feature, or future account-tied features.</li>
+</ul>
+<p>If you are <strong>under 13</strong>, you may use the app as a guest. You may not create an account. The app does not knowingly collect any personally identifiable information from users under 13. See §8 for details.</p>
+<hr />
+<h2>2. Information we collect</h2>
+<h3>2.1 Guest-mode information (stored only on your device)</h3>
+<p>When you use the app without an account, the following data is stored locally on your device using standard iOS storage. We never see it, it never leaves your phone, and uninstalling the app deletes all of it permanently.</p>
+<ul>
+<li>App settings (theme, font sizes, reciter choice, language preference, accessibility options)</li>
+<li>Memorization progress (which verses you&rsquo;ve practiced, when, your weak spots, hifz cycles)</li>
+<li>Reading progress (last page, bookmarks, reading streak, khatam tracking)</li>
+<li>Downloaded recitation audio</li>
+<li>Tajweed sensitivity preference</li>
+</ul>
+<p>If you later decide to create an account, you can choose to upload this local data to your new account so it syncs to your other devices. That migration is one-time and explicit — we don&rsquo;t reach into your phone.</p>
+<h3>2.2 Account information (only when you create an account)</h3>
+<p>When you create an account, we collect the following from your chosen sign-in method:</p>
+<table>
+<thead>
+<tr>
+<th>Sign-in method</th>
+<th>What we receive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sign in with Apple</strong></td>
+<td>A unique Apple-issued user identifier; your name (only if you choose to share it on the Apple consent screen); a relay email (<code>*@privaterelay.appleid.com</code>) which forwards to your real address but doesn&rsquo;t reveal it to us.</td>
+</tr>
+<tr>
+<td><strong>Sign in with Google</strong></td>
+<td>A unique Google-issued user identifier; your real email address; your name; your Google profile photo (if you have one).</td>
+</tr>
+<tr>
+<td><strong>Email and password</strong></td>
+<td>Your email address, your chosen display name, and a password (which we never store in plain text — it&rsquo;s hashed on our authentication provider).</td>
+</tr>
+</tbody>
+</table>
+<p>We may also generate and store on our servers:</p>
+<ul>
+<li>A unique user ID for your account in our system</li>
+<li>The date your account was created</li>
+<li>The date you last signed in</li>
+<li>Your account preferences (theme, daily goal, etc. — synced from device settings)</li>
+</ul>
+<p>We do <strong>not</strong> collect:</p>
+<ul>
+<li>Your phone number</li>
+<li>Your physical location (we use your timezone for prayer-time–style features only, and that&rsquo;s derived from your device, not GPS)</li>
+<li>Your contacts</li>
+<li>Your photos</li>
+<li>Advertising identifiers</li>
+<li>Cross-app tracking data (<code>IDFA</code>)</li>
+<li>Any biometric identifier</li>
+</ul>
+<h3>2.3 Sync data (only when you have an account)</h3>
+<p>When you are signed in, the following data is synchronized between your devices through our cloud storage:</p>
+<ul>
+<li>Memorization progress (hifz state, weak ayahs, mutashabihat practice)</li>
+<li>Mushaf bookmarks and last-read position</li>
+<li>Reading streak and khatam (completion cycle) tracking</li>
+<li>App settings (theme, font sizes, reciter choice, accessibility preferences)</li>
+<li>Daily-goal progress</li>
+</ul>
+<p>Sync is on by default for account users. You can pause sync from Settings.</p>
+<h3>2.4 Audio processed on your device only — never collected</h3>
+<p>The app uses your microphone in two distinct ways. The first is <strong>fully on-device</strong>:</p>
+<ul>
+<li><strong>Real-time recitation tracking.</strong> When you start a recitation session in the practice arena or mushaf view, the app uses your microphone to recognize Arabic words as you recite them, so that we can highlight words and follow your position in the verse. This processing happens entirely on your iPhone using a machine-learning model bundled inside the app. The audio stream is held only in memory for the duration of the recitation, then discarded the moment you stop. <strong>It is never recorded to disk, never uploaded, and never seen by us.</strong> This applies whether or not you have an account.</li>
+</ul>
+<h3>2.5 Audio sent to our server — only when you ask, only one verse at a time</h3>
+<p>The second microphone use is the <strong>pronunciation review</strong> feature (also called &ldquo;Muaalem&rdquo; in the interface). This feature is <strong>optional, account-required, and explicitly opt-in</strong>.</p>
+<ul>
+<li>The first time you tap the pronunciation review button, the app shows you a consent screen explaining exactly what&rsquo;s about to happen, asking for your confirmation. The two buttons are equal weight. There is no dark pattern.</li>
+<li>If you confirm, the recording for that <strong>single verse</strong> is sent over an encrypted connection (HTTPS, TLS 1.2 or higher) to a server operated by the developer for pronunciation analysis.</li>
+<li>The server returns a per-letter analysis of your pronunciation. <strong>The analysis output</strong> (which letters the model flagged, if any) is saved to your account so you can review your past sessions. The raw audio is not saved — only the analysis.</li>
+<li>Because the feature requires an account, the recording is <strong>associated with your user ID</strong> for the duration of the analysis and any subsequent retention period.</li>
+<li>The recording itself is <strong>ephemeral</strong>. It is held in memory on our server for the duration of the analysis request, processed, and released from memory as soon as the response is returned. We do not intentionally write the recording to durable storage (disk, database, object storage, or backups), and our server&rsquo;s logging is configured to capture only the surah and ayah numbers and the analysis outcome — never the audio bytes, audio metadata, or file names. See §5 for the retention table.</li>
+<li>The recording is <strong>never used to train any AI model</strong>, ours or anyone else&rsquo;s, unless you separately and explicitly opt in to such use. There is no such opt-in offered today.</li>
+<li>The recording is <strong>never shared</strong> with any third party other than the cloud infrastructure providers required to operate the feature (see §4).</li>
+</ul>
+<p>You can use the entire app — including memorization practice and on-device recitation tracking — without ever using pronunciation review.</p>
+<p>You can turn off pronunciation review entirely from Settings, in which case no audio will ever leave your device under any circumstances.</p>
+<h3>2.6 Diagnostic and crash data</h3>
+<p>The app may collect anonymized crash reports and basic operational diagnostics (e.g., &ldquo;the app crashed on screen X at time Y&rdquo;) to help us fix bugs. This data is not linked to your account or device identity. You can opt out of diagnostic collection from Settings.</p>
+<h3>2.7 What we don&rsquo;t collect, ever</h3>
+<p>We do not collect:</p>
+<ul>
+<li>Your physical location coordinates</li>
+<li>Your contacts</li>
+<li>Your photos or camera roll</li>
+<li>Advertising identifiers</li>
+<li>Cross-app tracking data</li>
+<li>Biometric data (other than the strictly-on-device, never-stored audio in §2.4)</li>
+<li>Any data from third-party advertising networks</li>
+<li>Anything used to build a behavioral profile of you</li>
+</ul>
+<hr />
+<h2>3. How we use the information</h2>
+<p>The on-device data described in §2.1 is used solely to make the app work for you on your device.</p>
+<p>The account data in §2.2 is used solely to give you a working account, sync your data across your devices, and let you sign back in.</p>
+<p>The sync data in §2.3 is used solely to keep your devices consistent. We do not analyze it for any purpose other than syncing.</p>
+<p>The audio in §2.5 is used solely to compute the pronunciation analysis you requested for the verse you submitted, and to return that analysis to your phone.</p>
+<p>We do not use any data for advertising, behavioral profiling, ad targeting, or training machine learning models. We do not run any analytics suite that builds a profile of you.</p>
+<hr />
+<h2>4. Sharing and third-party processors</h2>
+<p>We do not sell your data. We do not rent it. We do not give it to advertisers.</p>
+<p>We do use a small number of third-party service providers (&ldquo;processors&rdquo;) to run the technical infrastructure of the app. They process data only on our behalf, only for the purposes listed below, and only under contractual data-protection terms.</p>
+<table>
+<thead>
+<tr>
+<th>Processor</th>
+<th>Purpose</th>
+<th>What they receive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Supabase, Inc.</strong> (authentication)</td>
+<td>User authentication for Apple/Google/email sign-in; token issuance</td>
+<td>Account identifiers, sign-in tokens, email, name. Supabase is SOC 2 Type II certified and offers a Data Processing Agreement with Standard Contractual Clauses for EU transfers.</td>
+</tr>
+<tr>
+<td><strong>Apple, Inc.</strong></td>
+<td>Sign in with Apple flow</td>
+<td>Whatever Apple chooses to share; we receive a relay email and an opaque user ID</td>
+</tr>
+<tr>
+<td><strong>Google LLC</strong></td>
+<td>Sign in with Google flow</td>
+<td>Whatever you authorize during the Google consent screen</td>
+</tr>
+<tr>
+<td><strong>Supabase, Inc.</strong> (Postgres storage)</td>
+<td>Storing your synced settings, hifz progress, bookmarks, khatam state, and pronunciation-review analysis outputs (not the raw audio — see §2.5)</td>
+<td>Your sync data from §2.3 and your analysis outputs, associated with your user ID</td>
+</tr>
+<tr>
+<td><strong>[Pronunciation review GPU host TBD — e.g., Modal, Runpod, Replicate, or Cloud Run GPU]</strong></td>
+<td>A separate, arm&rsquo;s-length GPU-hosted serverless service that runs the pronunciation analysis ML model. This service has no database connection, no Supabase credentials, and no persistent storage — its only job is to receive one verse&rsquo;s audio, validate your Supabase session token, run the model in memory on a GPU, return the analysis, and release the audio from memory. The audio is never transmitted to any other processor, including Supabase.</td>
+<td>The single-verse audio you submit, held in the service&rsquo;s request-lifetime memory only, for the duration of the analysis request. No persistent storage of any kind.</td>
+</tr>
+<tr>
+<td><strong>[Crash reporting TBD — e.g., Sentry, Apple&rsquo;s built-in crash reporting only]</strong></td>
+<td>Anonymized crash and diagnostic data</td>
+<td>App stack traces, device model, iOS version</td>
+</tr>
+</tbody>
+</table>
+<p>We may add or remove processors over time. Material changes to this list will be reflected here, and we will update the &ldquo;Last updated&rdquo; date.</p>
+<p>We will not transfer your data outside of these processors except where required by law (for example, in response to a valid court order). If we receive such a request, we will resist it where lawful, notify you where we are not legally prohibited from doing so, and disclose the minimum necessary.</p>
+<hr />
+<h2>5. Data retention</h2>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>How long we keep it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Guest-mode data</strong></td>
+<td>Stored on your device until you delete the app or delete it from within the app. We never see it.</td>
+</tr>
+<tr>
+<td><strong>Account profile</strong> (email, name, user ID)</td>
+<td>For as long as your account exists. Deleted from primary storage within 30 days of account deletion; removed from rotating backups within 90 days.</td>
+</tr>
+<tr>
+<td><strong>Sync data</strong> (settings, hifz progress, bookmarks)</td>
+<td>For as long as your account exists. Deleted from primary storage within 30 days of account deletion; removed from rotating backups within 90 days.</td>
+</tr>
+<tr>
+<td><strong>Pronunciation review audio (raw recording)</strong></td>
+<td><strong>Ephemeral.</strong> Held in memory only, for the duration of the analysis request, then discarded. Never written to disk, a database, logs, or backups.</td>
+</tr>
+<tr>
+<td><strong>Pronunciation review analysis output</strong> (letters flagged, session metadata)</td>
+<td>For as long as your account exists. Deleted within 30 days of account deletion.</td>
+</tr>
+<tr>
+<td><strong>Crash diagnostics</strong></td>
+<td>90 days, then aggregated and the originals deleted.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Account deletion</strong> will be available in the app under Settings → Account → Delete account once accounts ship. Deletion is permanent and irreversible. After you delete your account, we have 30 days to remove your data from primary storage and 90 days to remove it from rotating backups.</p>
+<hr />
+<h2>6. Your rights</h2>
+<p>Regardless of where you live, we honor the following rights for everyone:</p>
+<ul>
+<li><strong>Right to access</strong> — You can request a copy of all data we hold about you.</li>
+<li><strong>Right to correct</strong> — You can correct anything inaccurate.</li>
+<li><strong>Right to delete</strong> — Once account creation is available in the app, you will be able to delete your account directly from Settings → Account → Delete account. Server-side data is then deleted per §5. In the meantime (before accounts ship), there is no account to delete, and all data lives only on your device.</li>
+<li><strong>Right to export</strong> — Once account creation is available, you will be able to request a portable copy of your data in a common machine-readable format from Settings → Account → Export my data.</li>
+<li><strong>Right to object and restrict</strong> — You can opt out of optional data flows (Muaalem, sync, crash diagnostics) without losing the ability to use the rest of the app.</li>
+<li><strong>Right to withdraw consent</strong> — Where we rely on your consent, you can withdraw it at any time without affecting the lawfulness of processing before the withdrawal.</li>
+<li><strong>Right to complain</strong> — If you live in the EU/EEA or UK, you can complain to your local Data Protection Authority. We&rsquo;d prefer you contact us first so we can fix the problem.</li>
+</ul>
+<p>To exercise any of these rights, write to <strong>amr@verific.ai</strong>. We will respond within <strong>30 days</strong> (or the time required by your local law, whichever is shorter).</p>
+<h3>6.1 Specific notes for EU / UK / EEA users (GDPR &amp; UK GDPR)</h3>
+<p><strong>Applicability note:</strong> v1 of the app is not shipped to the European Union, European Economic Area, United Kingdom, or Switzerland (see §TL;DR). The provisions in this section describe the posture we will operate under when availability is restored to those markets, and they govern any handling of EU/UK/EEA personal data we receive in the meantime (for example, if a user in an excluded market sideloads the app or travels).</p>
+<ul>
+<li><strong>Data controller:</strong> Amr Aboelnaga, an individual sole proprietor resident in the Commonwealth of Virginia, United States, at [physical postal address TBD — required by Apple for the privacy policy URL].</li>
+<li><strong>Lawful bases for processing:</strong></li>
+<li>Account creation and sync: performance of a contract you entered into with us by creating an account.</li>
+<li>Pronunciation review (Muaalem): your explicit consent.</li>
+<li>Crash diagnostics: our legitimate interest in keeping the app stable and fixing bugs, balanced against your reasonable expectations.</li>
+<li>On-device ASR: not &ldquo;processing&rdquo; by us at all, since we never receive the data.</li>
+<li><strong>International transfers:</strong> Some of our processors are based outside the EU. Where required, transfers are covered by Standard Contractual Clauses (SCCs) approved by the European Commission.</li>
+<li><strong>No automated decision-making with legal effects.</strong> Pronunciation review is feedback for you about your recitation; it does not produce legal or similarly significant effects.</li>
+<li><strong>Article 27 representative:</strong> we will appoint a designated EU representative and a separate UK representative before reopening availability to either market. Until that appointment is in place, we do not offer goods or services to EU/UK users, which is the legal threshold under Article 3(2)(a).</li>
+</ul>
+<h3>6.2 Specific notes for California users (CCPA / CPRA)</h3>
+<ul>
+<li>We do <strong>not</strong> &ldquo;sell&rdquo; or &ldquo;share&rdquo; personal information as those terms are defined in the CCPA/CPRA.</li>
+<li>We do not knowingly collect personal information from California residents under 16 (and not from anyone under 13 anywhere).</li>
+<li>You have the right to know, delete, correct, and limit use of sensitive personal information. Voice recordings are sensitive personal information under CPRA; we collect them only with your explicit consent and only for the pronunciation review feature.</li>
+</ul>
+<h3>6.3 Specific notes for Illinois users (BIPA)</h3>
+<p>Illinois&rsquo;s Biometric Information Privacy Act (740 ILCS 14/) treats voice recordings used to identify an individual as &ldquo;biometric identifiers&rdquo; and requires (a) written informed consent before collection, (b) a published retention schedule and destruction timeline, and (c) a written policy governing the data.</p>
+<ul>
+<li><strong>Our use of voice recordings is narrow and purpose-limited:</strong> the pronunciation review feature processes your audio in real time to produce a pronunciation analysis. We <strong>do not</strong> use voice data to identify you, to build a voiceprint, or to verify your identity. Your identity is established through your account, not your voice.</li>
+<li><strong>Consent:</strong> before your first use of the pronunciation review feature, the app shows you a consent screen explaining that the audio will be sent to our server, analyzed, and discarded. You must tap &ldquo;Send this verse&rdquo; to proceed. This is the &ldquo;written release&rdquo; required by BIPA §15(b)(3) — under Illinois case law (see <em>Rosenbach v. Six Flags</em>), an in-app click-through constitutes a signed release for this purpose.</li>
+<li><strong>Retention schedule:</strong> voice recordings are retained for the duration of the analysis request only (typically a few seconds) and are then destroyed by being released from memory. No voice recording is retained longer than the single HTTP request that carried it. This is the published destruction schedule required by BIPA §15(a).</li>
+<li><strong>Written policy:</strong> this section of the Privacy Policy is that written policy.</li>
+<li><strong>Additional restrictions under BIPA §15(c) and §15(d):</strong> we do not profit from, sell, lease, or otherwise profit from voice data, and we do not disclose it except to the developer-operated processor that runs the analysis model.</li>
+</ul>
+<p>If you are an Illinois resident and have questions about how BIPA applies to your use of this app, please contact us at <strong>amr@verific.ai</strong>.</p>
+<hr />
+<h2>7. Security</h2>
+<p>We take security seriously, but no system is unbreakable. Here&rsquo;s what we do and what you should know:</p>
+<ul>
+<li>All network traffic between the app and our servers uses HTTPS with TLS 1.2 or higher.</li>
+<li>Passwords (when using the email/password sign-in option) are hashed by Supabase Auth using bcrypt. We never see your plain-text password, not even at the moment of sign-up.</li>
+<li>Audio uploaded for pronunciation review is <strong>held in memory only</strong> for the duration of the analysis request and is never written to durable storage, so there is no at-rest encryption to describe — the data does not come to rest.</li>
+<li>Account access is protected by your chosen sign-in method&rsquo;s protections (Apple ID, Google account, or your password).</li>
+<li>We do not contain any cryptography subject to U.S. export restriction; the app uses only standard iOS HTTPS.</li>
+</ul>
+<p>If we ever experience a security incident affecting your data, we will notify the relevant supervisory authorities and affected users within the timeframe required by applicable law. Specifically: under GDPR Article 33, we will notify the competent supervisory authority within <strong>72 hours</strong> of becoming aware of a personal-data breach and, under Article 34, notify affected individuals without undue delay where the breach is likely to result in a high risk to their rights. In other jurisdictions — including California, New York, Illinois, and the various U.S. state data-breach notification laws — we will comply with each jurisdiction&rsquo;s specific notification window and content requirements (which vary from &ldquo;without undue delay&rdquo; to 30–60 days).</p>
+<hr />
+<h2>8. Children&rsquo;s privacy</h2>
+<p>The app is rated <strong>4+</strong> in the App Store because the content (the Qur&rsquo;an itself) is appropriate for all ages. <strong>However, account creation is restricted to users aged 13 or older.</strong></p>
+<ul>
+<li><strong>Under 13s</strong> can use the app as guests. They can read, navigate the mushaf, practice memorization, and use the on-device recitation tracking. Nothing they do is collected or transmitted off the device.</li>
+<li><strong>Under 13s cannot create an account, cannot use Muaalem (pronunciation review), and cannot use cloud sync.</strong> These features all require an account, and account creation requires self-attestation that you are 13 or older.</li>
+<li><strong>We do not knowingly collect personally identifiable information from children under 13.</strong> If we discover that we have inadvertently received such information (for example, because a child lied about their age during signup), we will delete it from our systems as soon as we become aware.</li>
+<li><strong>If you are a parent or guardian</strong> and you believe your child under 13 has created an account in violation of this policy, please contact us at <strong>amr@verific.ai</strong> and we will delete the account and all associated data immediately.</li>
+<li><strong>We do not direct the app at children.</strong> Children are welcome to use the guest experience, but the app is not designed primarily for children, and we do not market it as a kids&rsquo; product.</li>
+<li><strong>COPPA compliance:</strong> Because we do not knowingly collect data from children under 13, COPPA&rsquo;s parental-consent requirements do not apply. The age gate is the safeguard.</li>
+</ul>
+<hr />
+<h2>9. International transfers</h2>
+<p>Our servers and our processors may be located in countries other than yours. By using the app and creating an account, you understand and consent to your data being transferred to and processed in those countries.</p>
+<p>Because v1 availability is limited to the United States and other non-EU markets (see §TL;DR), GDPR international-transfer rules (Chapter V) do not currently apply to our processing. When availability is extended to the European Union, European Economic Area, United Kingdom, or Switzerland in a future release, we will ensure that any cross-border transfers are protected by appropriate safeguards — typically Standard Contractual Clauses — and this section will be updated at that time per §10.</p>
+<hr />
+<h2>10. Changes to this policy</h2>
+<p>We may update this policy from time to time. The &ldquo;Last updated&rdquo; date at the top of this page will reflect the most recent change.</p>
+<ul>
+<li><strong>Material changes</strong> (changes that broaden how we collect or use your data, or that introduce new categories of recipients): we will notify you in-app and by email (if you have an account) <strong>at least 30 days before</strong> the change takes effect. You will have the option to delete your account before the change takes effect if you don&rsquo;t agree.</li>
+<li><strong>Non-material changes</strong> (typos, clarifications, processor renames, etc.): updated silently, with a note in the app&rsquo;s release notes.</li>
+</ul>
+<p>We will not retroactively reduce the protections you had at the time you started using the app or created your account.</p>
+<hr />
+<h2>11. Contact us</h2>
+<p>For any privacy-related question, request, complaint, or concern:</p>
+<ul>
+<li><strong>Email:</strong> amr@verific.ai</li>
+<li><strong>Mail:</strong> Amr Aboelnaga / [Postal Address TBD]</li>
+<li><strong>EU representative (GDPR Article 27):</strong> <strong>Not applicable for v1</strong> — the app is not available in the European Union or European Economic Area in v1, so GDPR Article 3(2)(a) is not triggered and no Article 27 representative is required at this time. A representative will be appointed (via Prighter, EDPO, or an equivalent service) before availability is extended to any EU/EEA market in a future release, and their contact details will replace this note.</li>
+<li><strong>UK representative (UK GDPR):</strong> <strong>Not applicable for v1</strong> — same reasoning as above; the app is not available in the United Kingdom in v1. A UK representative will be appointed before availability is extended to the UK in a future release.</li>
+</ul>
+<p>We respond to all privacy requests within 30 days (or sooner where required by law).</p>
+<hr />
+<hr />
     </article>
-
     <footer>
       <p><a href="index.html">Rūh Legal</a> &middot; <a href="terms.html">Terms of Service</a></p>
     </footer>
